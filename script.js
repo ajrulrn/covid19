@@ -30,10 +30,10 @@ function apiIndonesia() {
         dataType: 'json',
     })
     .done(function(e) {
-        let totalCase = e[37].attributes.Confirmed
-        let activeCase = e[37].attributes.Active
-        let recovered = e[37].attributes.Recovered
-        let deaths = e[37].attributes.Deaths
+        let totalCase = e[36].attributes.Confirmed
+        let activeCase = e[36].attributes.Active
+        let recovered = e[36].attributes.Recovered
+        let deaths = e[36].attributes.Deaths
         
         $('#infected').html(totalCase)
         $('#active').html(activeCase)
