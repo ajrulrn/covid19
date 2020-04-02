@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Covid 19 - Muffin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+      body{
+        background-color: #F3F3F3;
+      }
+      .stat {
+        background-color: #fff;
+        min-height: 180px;
+        border-radius: 10px;
+        color: #545454;
+      }
+
+      .infected-bar:hover,
+      .active-bar:hover,
+      .recover-bar:hover,
+      .death-bar:hover {
+          cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col">
+          <h1 id="title">Informasi Covid 19 Indonesia</h1>
+        </div>
+      </div>
+
+      <div class="row d-fle mt-5">
+        <div class="col-3 d-fle">
+          <div class="row mx-0 stat align-self-center align-items-center d-fle">
+            <div class="col-4 offset-1 align-self-center align-items-center">
+              <img src="biru.png" alt="">
+            </div>
+            <div class="col-5">
+              <p class="mb-0">Terinfeksi</p>
+              <h4 class="mb-0" id="infected"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 d-fle">
+          <div class="row mx-0 stat align-self-center align-items-center d-fle">
+            <div class="col-4 offset-1 align-self-center align-items-center">
+              <img src="kuning.png" alt="">
+            </div>
+            <div class="col-5">
+              <p class="mb-0">Aktif</p>
+              <h4 class="mb-0" id="active"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 d-fle">
+          <div class="row mx-0 stat align-self-center align-items-center d-fle">
+            <div class="col-4 offset-1 align-self-center align-items-center">
+              <img src="hijau.png" alt="">
+            </div>
+            <div class="col-5">
+              <p class="mb-0">Sembuh</p>
+              <h4 class="mb-0" id="recovered"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 d-fle">
+          <div class="row mx-0 stat align-self-center align-items-center d-fle">
+            <div class="col-4 offset-1 align-self-center align-items-center">
+              <img src="merah.png" alt="">
+            </div>
+            <div class="col-5">
+              <p class="mb-0">Meninggal</p>
+              <h4 class="mb-0" id="deaths"></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-3">
+        <div id="" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+              
+              <div class="carousel-item active" style="background-color: #ccc; height: 180px;">
+                <h6 class="date-header">
+                  12 April 2020
+                </h6>
+                <span>Positif 18</span><br>
+                <span>Sembuh 1</span><br>
+                <span>Meninggal 0</span>
+              </div>
+              <div class="carousel-item" style="background-color: #ccc; height: 180px;">
+                BGT
+              </div>
+              <div class="carousel-item" style="background-color: #ccc; height: 180px;">
+                Cuy
+              </div>
+            </div>
+            <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a> -->
+          </div>
+        </div>
+        <div class="col-3">
+        <div id="" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+              
+              <div class="carousel-item active" style="background-color: #ccc; height: 180px;">
+                <h6 class="date-header">
+                  12 April 2020
+                </h6>
+                <span>Positif 18</span><br>
+                <span>Sembuh 1</span><br>
+                <span>Meninggal 0</span>
+              </div>
+              <div class="carousel-item" style="background-color: #ccc; height: 180px;">
+                BGT
+              </div>
+              <div class="carousel-item" style="background-color: #ccc; height: 180px;">
+                Cuy
+              </div>
+            </div>
+            <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a> -->
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="container-bar bg-white d-flex" style="height: 180px;">
+            <div class="bar-stat align-self-center px-4" style="width: 100%;">
+              <h5 class="bar-title text-center mb-4">
+                Progress Bar
+              </h5>
+              <div class="progress" style="height: 10px;">
+                <div class="progress-bar bg-info infected-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top"></div>
+              </div>
+              <div class="progress mt-3" style="height: 10px;">
+                <div class="progress-bar bg-warning active-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top"></div>
+              </div>
+              <div class="progress mt-3" style="height: 10px;">
+                <div class="progress-bar bg-success recover-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top"></div>
+              </div>
+              <div class="progress mt-3" style="height: 10px;">
+                <div class="progress-bar bg-danger death-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-content mt-5">
+      <div class="container">
+        
+
+        <div class="row">
+          <div class="col content">
+            <table class="table table-bordered bg-white">
+              <thead>
+                <tr>
+                  <th scope="col">Provinsi</th>
+                  <th class="text-center" scope="col">Positif</th>
+                  <th class="text-center" scope="col">Sembuh</th>
+                  <th class="text-center" scope="col">Meninggal</th>
+                </tr>
+              </thead>
+              <tbody>
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</html>
