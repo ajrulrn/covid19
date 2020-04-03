@@ -24,16 +24,16 @@ function apiProvince() {
 
 function apiIndonesia() {
     $.ajax({
-        url: 'https://api.kawalcorona.com/',
+        url: 'https://api.thevirustracker.com/free-api?countryTotal=ID',
         type: 'GET',
         crossDomain: true,
         dataType: 'json',
     })
-    .done(function(e) {
-        let totalCase = e[36].attributes.Confirmed
-        let activeCase = e[36].attributes.Active
-        let recovered = e[36].attributes.Recovered
-        let deaths = e[36].attributes.Deaths
+    .done(function(data) {
+        let totalCase = data.countrydata[0].total_cases
+        let activeCase = data.countrydata[0].total_active_cases
+        let recovered = data.countrydata[0].total_recovered
+        let deaths = data.countrydata[0].total_deaths
         
         $('#infected').html(totalCase)
         $('#active').html(activeCase)
