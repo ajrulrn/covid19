@@ -40,9 +40,9 @@ function apiIndonesia() {
         $('#recovered').html(recovered)
         $('#deaths').html(deaths)
         
-        let percentageActive = Math.round((activeCase/totalCase) * 100) + '%'
-        let percentageRecovered = Math.round((recovered/totalCase) * 100) + '%'
-        let percentageDeaths = Math.round((deaths/totalCase) * 100) + '%'
+        let percentageActive = Math.round((100 * (activeCase/totalCase)).toFixed(2)) + '%'
+        let percentageRecovered = Math.round((100 * (recovered/totalCase)).toFixed(2)) + '%'
+        let percentageDeaths = Math.round((100 * (deaths/totalCase)).toFixed(2)) + '%'
         $('.infected-bar').attr('title', totalCase)
         $('.active-bar').css('width', percentageActive)
         $('.active-bar').attr('title', percentageActive)
