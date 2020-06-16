@@ -3,7 +3,7 @@ apiProvince()
 
 function apiProvince() {
     $.ajax({
-        url: 'https://api.kawalcorona.com/indonesia/provinsi/',
+        url: 'https://cors-anywhere.herokuapp.com/https://api.kawalcorona.com/indonesia/provinsi/',
         type: 'get',
         crossDomain: true,
         dataType: 'json',
